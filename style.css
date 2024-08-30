@@ -35,6 +35,18 @@ html {
   background-color: black;
 }
 
+.canvas__pixel--red {
+  background-color: red;
+}
+
+.canvas__pixel--blue {
+  background-color: blue;
+}
+
+.canvas__pixel--green {
+  background-color: green;
+}
+
 .control-container {
   margin-top: 50px;
   width: 100%;
