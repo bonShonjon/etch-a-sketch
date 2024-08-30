@@ -27,3 +27,7 @@ html {
 .canvas__pixel {
   flex: 1;
 }
+
+.canvas__pixel--black {
+  background-color: black;
+}
