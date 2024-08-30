@@ -1,6 +1,9 @@
 const canvas = document.querySelector(".canvas");
+const btnList = document.querySelectorAll(".button")
 let brushColour = 'canvas__pixel--black'
-canvasCreate(32);
+
+canvasCreate(16);
+btnList.forEach((btn) => btn.addEventListener("click", onBtnPress))
 
 function canvasCreate(canvasRes) {
   for (i = 0; i < canvasRes; i++) {
@@ -20,4 +23,33 @@ function colourPixel(e) {
   if (!e.target.className.includes(brushColour)) {
     e.target.className = 'canvas__pixel ' + brushColour;
   }
+}
+
+function onBtnPress(e) {
+  btnText = e.target.textContent.toLowerCase();
+
+  switch(btnText) {
+    case "clear":
+      clearCanvas();
+      break;
+    case "black":
+
+      break;
+    case "red":
+
+      break;
+    case "blue":
+
+      break;
+    case "green":
+
+      break;
+    default:
+      console.log("Unassigned button")
+  }
+}
+
+function clearCanvas() {
+  const pixelList = document.querySelectorAll(".canvas__pixel");
+  pixelList.forEach((pixel) => pixel.className = "canvas__pixel")
 }
