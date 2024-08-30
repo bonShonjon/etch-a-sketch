@@ -1,0 +1,29 @@
+html {
+  background-color: coral;
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.canvas {
+  background-color: antiquewhite;
+  height: 800px;
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+}
+
+.canvas__row {
+  flex: 1;
+  display: flex;
+}
+
+.canvas__pixel {
+  flex: 1;
+}
