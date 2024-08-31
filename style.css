@@ -144,3 +144,12 @@ html {
 .button__preview--brown {
   background-color: saddlebrown;
 }
+
+.control-container__slider {
+  margin: 0 20px;
+  width: 175px;
+  text-align: center;
+  color: antiquewhite;
+  font-weight: 500;
+  font-size: 22px;
+}
