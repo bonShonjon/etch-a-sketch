@@ -21,7 +21,7 @@ function canvasCreate(canvasRes) {
 
 function colourPixel(e) {
   //colour pixel if not current colour and mouse button pressed
-  if (!e.target.className.includes(brushColour) && e.which == 1) {
+  if (e.which == 1) {
     e.target.className = "canvas__pixel " + brushColour;
   }
 }
@@ -33,6 +33,9 @@ function onBtnPress(e) {
     case "clear":
       clearCanvas();
       break;
+    case "eraser":
+      brushColour = ''
+      highlightSelectedBtn(e);
     default:
       brushColour = "canvas__pixel--" + e.currentTarget.id;
       highlightSelectedBtn(e);
