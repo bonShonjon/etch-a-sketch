@@ -6,9 +6,9 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
   </head>
-  <body>
+  <body ondragstart="return false;" ondrop="return false;"> <!--disable accidental drag-and-drop during drawing-->
     <div class="container">
-      <div class="canvas"></div>
+      <div class="canvas" draggable="false"></div>
       <div class="control-container">
         <button class="button">Black</button>
         <button class="button">Red</button>
