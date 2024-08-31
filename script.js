@@ -33,24 +33,19 @@ function onBtnPress(e) {
     case "clear":
       clearCanvas();
       break;
-    case "black":
-      brushColour = "canvas__pixel--black";
-      break;
-    case "red":
-      brushColour = "canvas__pixel--red";
-      break;
-    case "blue":
-      brushColour = "canvas__pixel--blue";
-      break;
-    case "green":
-      brushColour = "canvas__pixel--green";
-      break;
     default:
-      console.log("Unassigned button")
+      brushColour = "canvas__pixel--" + e.currentTarget.id;
+      highlightSelectedBtn(e);
   }
 }
 
 function clearCanvas() {
   const pixelList = document.querySelectorAll(".canvas__pixel");
-  pixelList.forEach((pixel) => pixel.className = "canvas__pixel")
+  pixelList.forEach((pixel) => pixel.className = "canvas__pixel");
+}
+
+function highlightSelectedBtn(e) {
+  const currentSelection = document.querySelector(".button--selected");
+  currentSelection.className = "button";
+  e.currentTarget.className = "button button--selected";
 }

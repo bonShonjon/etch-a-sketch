@@ -10,10 +10,18 @@
     <div class="container">
       <div class="canvas" draggable="false"></div>
       <div class="control-container">
-        <button class="button">Black</button>
-        <button class="button">Red</button>
-        <button class="button">Blue</button>
-        <button class="button">Green</button>
+        <button class="button button--selected" id="black">
+          <div class="button__preview button__preview--black"></div>
+        </button>
+        <button class="button" id="red">
+          <div class="button__preview button__preview--red"></div>
+        </button>
+        <button class="button" id="blue">
+          <div class="button__preview button__preview--blue"></div>
+        </button>
+        <button class="button" id="green">
+          <div class="button__preview button__preview--green"></div>
+        </button>
         <button class="button">Clear</button>
       </div>
     </div>
