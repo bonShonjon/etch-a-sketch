@@ -20,7 +20,8 @@ function canvasCreate(canvasRes) {
 }
 
 function colourPixel(e) {
-  if (!e.target.className.includes(brushColour)) {
+  //colour pixel if not current colour and mouse button pressed
+  if (!e.target.className.includes(brushColour) && e.which == 1) {
     e.target.className = "canvas__pixel " + brushColour;
   }
 }
