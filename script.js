@@ -2,7 +2,7 @@ const canvas = document.querySelector(".canvas");
 const btnList = document.querySelectorAll(".button")
 let brushColour = "canvas__pixel--black"
 
-canvasCreate(16);
+canvasCreate(32);
 btnList.forEach((btn) => btn.addEventListener("click", onBtnPress))
 
 function canvasCreate(canvasRes) {
