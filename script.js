@@ -12,7 +12,8 @@ function canvasCreate(canvasRes) {
     for (j = 0; j < canvasRes; j++) {
       const canvasPixel = document.createElement("div");
       canvasPixel.className = "canvas__pixel";
-      canvasPixel.addEventListener('mouseover', colourPixel);
+      canvasPixel.addEventListener("mouseover", colourPixel);
+      canvasPixel.addEventListener("mousedown", colourPixel)
       canvasRow.appendChild(canvasPixel);
     }
     canvas.appendChild(canvasRow)
@@ -20,7 +21,7 @@ function canvasCreate(canvasRes) {
 }
 
 function colourPixel(e) {
-  //colour pixel if not current colour and mouse button pressed
+  //if mouse button is pressed
   if (e.which == 1) {
     e.target.className = "canvas__pixel " + brushColour;
   }
