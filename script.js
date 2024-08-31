@@ -4,7 +4,8 @@ const slider = document.querySelector("#resolution-range");
 const sliderText = document.querySelector("#resolution-value");
 
 
-let brushColour = "canvas__pixel--black"
+let brushColour = "canvas__pixel--black";
+let rainbowHue = 0;
 
 canvasCreate(slider.value);
 
@@ -30,7 +31,11 @@ function canvasCreate(canvasRes) {
 function colourPixel(e) {
   //if mouse button is pressed
   if (e.which == 1) {
-    e.target.className = "canvas__pixel " + brushColour;
+    if (brushColour == "canvas__pixel--rainbow") {
+      rainbowColourPixel(e);
+    } else {
+      e.target.className = "canvas__pixel " + brushColour;
+    }
   }
 }
 
@@ -45,6 +50,7 @@ function onBtnPress(e) {
       brushColour = ''
       highlightSelectedBtn(e);
     default:
+      rainbowHue = 0;
       brushColour = "canvas__pixel--" + e.currentTarget.id;
       highlightSelectedBtn(e);
   }
@@ -52,7 +58,10 @@ function onBtnPress(e) {
 
 function clearCanvas() {
   const pixelList = document.querySelectorAll(".canvas__pixel");
-  pixelList.forEach((pixel) => pixel.className = "canvas__pixel");
+  pixelList.forEach((pixel) => {
+    pixel.className = "canvas__pixel";
+    pixel.style.backgroundColor = "";
+  });
 }
 
 function highlightSelectedBtn(e) {
@@ -61,6 +70,7 @@ function highlightSelectedBtn(e) {
   e.currentTarget.className = "button button--selected";
 }
 
+//function to update slider label in real time
 function onSliderInput(e) {
   sliderText.textContent = e.target.value;
 }
@@ -72,4 +82,9 @@ function onSliderChange(e) {
 
 function canvasDestroy() {
   canvas.innerHTML = "";
+}
+
+function rainbowColourPixel(e) {
+  e.target.style.backgroundColor = "hsl(" + rainbowHue + " 100% 50%)";
+  rainbowHue = (rainbowHue + 5) % 360;
 }
