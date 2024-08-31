@@ -35,6 +35,7 @@ function colourPixel(e) {
       rainbowColourPixel(e);
     } else {
       e.target.className = "canvas__pixel " + brushColour;
+      e.target.style.backgroundColor = '';
     }
   }
 }
