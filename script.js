@@ -31,9 +31,11 @@ function canvasCreate(canvasRes) {
 function colourPixel(e) {
   //if mouse button is pressed
   if (e.which == 1) {
+    //rainbow brush changes pixel style directly
     if (brushColour == "canvas__pixel--rainbow") {
       rainbowColourPixel(e);
     } else {
+      //other brushes change pixel class
       e.target.className = "canvas__pixel " + brushColour;
       e.target.style.backgroundColor = '';
     }
@@ -67,8 +69,9 @@ function clearCanvas() {
 
 function highlightSelectedBtn(e) {
   const currentSelection = document.querySelector(".button--selected");
-  currentSelection.className = "button";
-  e.currentTarget.className = "button button--selected";
+  currentSelection.className = 
+    currentSelection.className.replace(" button--selected", "");
+  e.currentTarget.className += " button--selected";
 }
 
 //function to update slider label in real time

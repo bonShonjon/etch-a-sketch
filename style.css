@@ -71,6 +71,14 @@ html {
   background-color: saddlebrown;
 }
 
+.canvas__pixel--limegreen {
+  background-color: limegreen;
+}
+
+.canvas__pixel--gray {
+  background-color: gray;
+}
+
 .control-container {
   margin-top: 50px;
   width: 100%;
@@ -96,6 +104,10 @@ html {
 
 .button--selected {
   background-color: goldenrod;
+}
+
+.button--big {
+  width: 133px;
 }
 
 .button__preview {
@@ -143,6 +155,14 @@ html {
 
 .button__preview--brown {
   background-color: saddlebrown;
+}
+
+.button__preview--limegreen {
+  background-color: limegreen;
+}
+
+.button__preview--gray {
+  background-color: gray;
 }
 
 .button__preview--rainbow {
