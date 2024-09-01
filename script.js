@@ -34,6 +34,8 @@ function colourPixel(e) {
     //rainbow brush changes pixel style directly
     if (brushColour == "canvas__pixel--rainbow") {
       rainbowColourPixel(e);
+    } else if (brushColour == "canvas__pixel--transluscent") {
+      transluscentColourPixel(e)
     } else {
       //other brushes change pixel class
       e.target.className = "canvas__pixel " + brushColour;
@@ -91,4 +93,12 @@ function canvasDestroy() {
 function rainbowColourPixel(e) {
   e.target.style.backgroundColor = "hsl(" + rainbowHue + " 100% 50%)";
   rainbowHue = (rainbowHue + 5) % 360;
+}
+
+function transluscentColourPixel(e) {
+  let currentAlpha = getComputedStyle(e.target).getPropertyValue("background-color").slice(14,-1);
+  if (currentAlpha < 1 && currentAlpha !== "") {
+    let newAlpha = +currentAlpha + 0.1;
+    e.target.style.backgroundColor = "rgba(0, 0, 0, " + newAlpha + ")";
+  }
 }

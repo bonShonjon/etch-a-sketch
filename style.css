@@ -181,6 +181,14 @@ html {
     );
 }
 
+.button__preview--transluscent {
+  background: linear-gradient(
+        135deg,
+        rgba(0, 0, 0, 0.0) 10%,
+        rgba(0, 0, 0, 0.75) 90%
+    );
+}
+
 .control-container__slider {
   margin: 0 20px;
   width: 175px;
